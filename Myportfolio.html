@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priya Sharma - Data Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9fcff;
+      color: #333;
+    }
+    header {
+      background-color: #003366; /* deep ocean blue */
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #003366;
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+    .tags {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Priya Santosh Sharma</h1>
+    <p>Data Analyst | Python • SQL • Power BI • Excel</p>
+  </header>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      Detail-oriented Data Analyst with a strong foundation in Python, SQL, and data interpretation. Proficient in Power BI and Advanced Excel, skilled at creating dashboards, reports, and applying data storytelling. Experienced in analyzing campaign and operational performance, delivering data-driven insights, and conducting statistical tests. Passionate about leveraging analytics to support business strategy and improve decision-making.
+    </p>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects" id="project-list"></div>
+  </section>
+
+
+
+  <footer>
+    <p>
+      📧 <a href="mailto:priyaasharmaads@gmail.com">priyaasharmaads@gmail.com</a> |
+      📱 +91 9272640337 |
+      📍 Nashik, Maharashtra |
+      🔗 <a href="http://www.linkedin.com/in/priya-sharma-96a577253" target="_blank">LinkedIn</a> |
+      💻 <a href="YOUR_GITHUB" target="_blank">GitHub</a> |
+      📄 <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:1d46b7b7-e84f-441c-8605-0eff9deb8041" target="_blank">Resume</a>
+    </p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "Hospital Emergency Room Dashboard",
+        description: "Designed a dashboard to monitor ER metrics like patient inflow, wait times, and treatment durations.",
+        tools: "Power BI, Excel (Power Query, Pivot Tables)",
+        result: "Helped hospital administration identify operational bottlenecks using data storytelling.",
+        link: "https://www.linkedin.com/posts/priya-sharma-96a577253_exceldashboard-dataanalysis-powerquery-activity-7324700630126620672-Lbwy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6N16IBLKorpxaNf4RoOrdKORIQlI4ML4o",
+        image: "https://thumbs.dreamstime.com/b/emergency-room-entrance-glass-door-background-hospital-activity-modern-features-bold-red-lettering-blurred-357044368.jpg"
+      },
+      {
+        title: "Social Media Usage Analysis During Lockdown",
+        description: "Conducted statistical analysis on user behavior and time spent online using hypothesis testing and chi-square.",
+        tools: "Statistics, Excel, Charts",
+        result: "Identified trends in social media usage patterns during lockdown.",
+        link: "https://1drv.ms/p/c/d0e845a9605fe7dd/EfP5_HHoX1xFviiAe9kX40wB_Tgjyunzxh1UkGGFEhs94Q?e=amit1y&nav=eyJzSWQiOjI1Nn0",
+        image: "https://www.hindustantimes.com/ht-img/img/2023/05/24/1600x900/social_media_1684921158726_1684921172093.jpg"
+      },
+    ];
+
+    const container = document.getElementById("project-list");
+    projects.forEach(p => {
+      const card = document.createElement("a");
+      card.href = p.link;
+      card.target = "_blank";
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.title}">
+        <h3>${p.title}</h3>
+        <p>${p.description}</p>
+        <p class="tags"><strong>Tools:</strong> ${p.tools}</p>
+        <p class="tags"><strong>Result:</strong> ${p.result}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
